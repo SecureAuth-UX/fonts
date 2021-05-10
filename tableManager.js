@@ -288,7 +288,7 @@
                         .filter(function () {
                             // search into column selected by #filter_by
                             var text = $(this)
-                                .find("td:eq(" + select_by + ")")
+                                .find(".td:eq(" + select_by + ")")
                                 .text()
                                 .replace(/\s+/g, " ")
                                 .toLowerCase();
