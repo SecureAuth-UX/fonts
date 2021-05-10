@@ -209,7 +209,7 @@
                 // append num pages on bottom
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
-                $(".table-footer").appendTo(numrowsDiv + pagesDiv);
+                //$(".table-footer").appendTo(numrowsDiv + pagesDiv);
 
                 // Showrows option and append
                 // If showrows is set get select val
@@ -219,6 +219,9 @@
 
                 generatePaginationValues();
             }
+            
+            $(".table-footer").html(numrowsDiv + pagesDiv);
+
 
             /**
             Check if disable filter by is empty or undefined
