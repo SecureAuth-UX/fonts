@@ -169,7 +169,7 @@
                     translate(voc_show_rows) +
                     ': </label><select id="numrows"></select></div>';
                 // append div to choose num rows to show
-                $(".table-footer").after(numrowsDiv);
+                Table.before(numrowsDiv);
                 // get show rows options and append select to its div
                 for (i = 0; i < showrows.length; i++) {
                     $("select#numrows").append(
@@ -209,7 +209,7 @@
                 // append num pages on bottom
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
-                $(".table-footer").after(pagesDiv);
+                Table.after(pagesDiv);
 
                 // Showrows option and append
                 // If showrows is set get select val
