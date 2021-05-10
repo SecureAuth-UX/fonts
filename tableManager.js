@@ -169,7 +169,7 @@
                     translate(voc_show_rows) +
                     ': </label><select id="numrows"></select></div>';
                 // append div to choose num rows to show
-                $(".table-footer").html(numrowsDiv);
+                // $(".table-footer").html(numrowsDiv);
                 // get show rows options and append select to its div
                 for (i = 0; i < showrows.length; i++) {
                     $("select#numrows").append(
