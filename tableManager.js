@@ -209,7 +209,7 @@
                 // append num pages on bottom
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
-                $(".table-footer").append(numrowsDiv + pagesDiv);
+                $(".table-footer").appendTo(numrowsDiv + pagesDiv);
 
                 // Showrows option and append
                 // If showrows is set get select val
