@@ -511,7 +511,7 @@
             // reset tbody
             tbody.html("");
             // append new sorted rows
-            tbody.html("<div class='tr'>" + arr.join("</div><div class='tr'>") + "</div>");
+            tbody.html("<div class='table-row tr'>" + arr.join("</div><div class='table-row tr'>") + "</div>");
             // then launch paginate function (if options.paginate = false it will not do anything)
             paginate();
         }
