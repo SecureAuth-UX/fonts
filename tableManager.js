@@ -3,7 +3,6 @@
     $.fn.tablemanager = function (options = null) {
 
         var Table   = $(this),
-            TFooter = $(".table-footer"),
             Heads   = $(this).find(".thead .th"),
             tbody   = $(this).find(".tbody"),
             rows    = $(this).find(".tbody .tr"),
@@ -210,7 +209,7 @@
                 // append num pages on bottom
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
-                TFooter.after(pagesDiv);
+                $(".for_numrows").after(pagesDiv);
 
                 // Showrows option and append
                 // If showrows is set get select val
