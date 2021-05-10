@@ -3,7 +3,7 @@
     $.fn.tablemanager = function (options = null) {
 
         var Table   = $(this),
-            TFooter = $(.table-footer),
+            TFooter = $(".table-footer"),
             Heads   = $(this).find(".thead .th"),
             tbody   = $(this).find(".tbody"),
             rows    = $(this).find(".tbody .tr"),
