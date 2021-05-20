@@ -5,11 +5,11 @@
         var Table   = $(this),
             Heads   = $(this).find(".thead .th"),
             tbody   = $(this).find(".tbody"),
-            rows    = $(this).find(".tbody .tr");
-            // rlen    = rows.length,
-            // arr     = [],
-            // cells,
-            // clen;
+            rows    = $(this).find(".tbody .tr"),
+            rlen    = rows.length,
+            arr     = [],
+            cells,
+            clen;
 
         /**
         Options default values
@@ -210,7 +210,7 @@
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
                 Table.after(pagesDiv);
-                
+
                 // Showrows option and append
                 // If showrows is set get select val
                 if (showrows_option !== true) {
@@ -343,7 +343,7 @@
                     firstSortColumn.push(options.firstSort[i][0]);
                     firstSortOrder.push(options.firstSort[i][1]);
                 }
-                // TableSort(firstSortRules);
+                TableSort(firstSortRules);
             }
         }
         if (debug) {
@@ -353,151 +353,151 @@
         /**
         Detect theads click and sort by that column
         **/
-        // Heads.each(function (n) {
-        //     // check if has class disableSort or has data-attribute = disable
-        //     var disable =
-        //         $(this).data("tablemanager") === "disable"
-        //             ? true
-        //             : $(this).hasClass("disableSort")
-        //             ? true
-        //             : false;
+        Heads.each(function (n) {
+            // check if has class disableSort or has data-attribute = disable
+            var disable =
+                $(this).data("tablemanager") === "disable"
+                    ? true
+                    : $(this).hasClass("disableSort")
+                    ? true
+                    : false;
 
-        //     if (!disable === true) {
-        //         $(this).on("click", function () {
-        //             if ($(this).hasClass("sortingAsc")) {
-        //                 $(Heads)
-        //                     .removeClass("sortingAsc")
-        //                     .removeClass("sortingDesc");
-        //                 $(this).addClass("sortingDesc");
-        //                 order = 1;
-        //             } else {
-        //                 $(Heads)
-        //                     .removeClass("sortingDesc")
-        //                     .removeClass("sortingAsc");
-        //                 $(this).addClass("sortingAsc");
-        //                 order = 0;
-        //             }
-        //             // TableSort(this, n, order);
-        //             var sortRules = [];
-        //             sortRules.push([n + 1, order]);
-        //             TableSort(sortRules);
-        //         });
-        //         $(this).addClass("sorterHeader");
-        //     }
-        // });
+            if (!disable === true) {
+                $(this).on("click", function () {
+                    if ($(this).hasClass("sortingAsc")) {
+                        $(Heads)
+                            .removeClass("sortingAsc")
+                            .removeClass("sortingDesc");
+                        $(this).addClass("sortingDesc");
+                        order = 1;
+                    } else {
+                        $(Heads)
+                            .removeClass("sortingDesc")
+                            .removeClass("sortingAsc");
+                        $(this).addClass("sortingAsc");
+                        order = 0;
+                    }
+                    // TableSort(this, n, order);
+                    var sortRules = [];
+                    sortRules.push([n + 1, order]);
+                    TableSort(sortRules);
+                });
+                $(this).addClass("sorterHeader");
+            }
+        });
 
         /**
         Main function: sort table
         rules = array of column, order
         **/
-        // function TableSort(rules) {
-        //     cellsArray = [];
-        //     for (i = 0; i < rlen; i++) {
-        //         cells = rows[i].cells;
-        //         clen = cells.length;
-        //         cellsArray[i] = [];
-        //         for (j = 0; j < clen; j++) {
-        //             cellsArray[i].push(cells[j].outerHTML);
-        //         }
-        //     }
-        //     // For each firtsort rule
-        //     var firstSortData = [];
-        //     for (i = 0; i < rules.length; i++) {
-        //         var col = rules[i][0] - 1;
-        //         var thead = Heads.eq(col);
-        //         var order =
-        //             rules[i][1] == undefined
-        //                 ? 0
-        //                 : rules[i][1] == 0 || rules[i][1] == "asc"
-        //                 ? 0
-        //                 : rules[i][1] == 1 || rules[i][1] == "desc"
-        //                 ? 1
-        //                 : 0;
-        //         // Manage classes asc and desc
-        //         if (i == 0) {
-        //             var firstClassOrder =
-        //                 order == 0 ? "sortingAsc" : "sortingDesc";
-        //             $(thead).addClass(firstClassOrder);
-        //         }
-        //         asc = order == 0 ? 1 : -1;
-        //         // if column is date
-        //         if (dateColumn.indexOf(col) != -1) {
-        //             for (j = 0; j < dateFormat.length; j++) {
-        //                 if (dateFormat[j][0] == col) {
-        //                     var type = "date";
-        //                     var format = dateFormat[j][1];
-        //                 }
-        //             }
-        //         } else {
-        //             var type = "alphanumeric";
-        //             var format = null;
-        //         }
-        //         firstSortData.push([col, asc, type, format]);
-        //     }
+        function TableSort(rules) {
+            cellsArray = [];
+            for (i = 0; i < rlen; i++) {
+                cells = rows[i].cells;
+                clen = cells.length;
+                cellsArray[i] = [];
+                for (j = 0; j < clen; j++) {
+                    cellsArray[i].push(cells[j].outerHTML);
+                }
+            }
+            // For each firtsort rule
+            var firstSortData = [];
+            for (i = 0; i < rules.length; i++) {
+                var col = rules[i][0] - 1;
+                var thead = Heads.eq(col);
+                var order =
+                    rules[i][1] == undefined
+                        ? 0
+                        : rules[i][1] == 0 || rules[i][1] == "asc"
+                        ? 0
+                        : rules[i][1] == 1 || rules[i][1] == "desc"
+                        ? 1
+                        : 0;
+                // Manage classes asc and desc
+                if (i == 0) {
+                    var firstClassOrder =
+                        order == 0 ? "sortingAsc" : "sortingDesc";
+                    $(thead).addClass(firstClassOrder);
+                }
+                asc = order == 0 ? 1 : -1;
+                // if column is date
+                if (dateColumn.indexOf(col) != -1) {
+                    for (j = 0; j < dateFormat.length; j++) {
+                        if (dateFormat[j][0] == col) {
+                            var type = "date";
+                            var format = dateFormat[j][1];
+                        }
+                    }
+                } else {
+                    var type = "alphanumeric";
+                    var format = null;
+                }
+                firstSortData.push([col, asc, type, format]);
+            }
 
-        //     multipleSortCol(cellsArray, firstSortData);
+            multipleSortCol(cellsArray, firstSortData);
 
-        //     appendSortedTable(cellsArray);
-        // }
+            appendSortedTable(cellsArray);
+        }
 
         /** 
         Function which sort columns
         array = what have to be sorted
         data = columns, orders (asc and desc), types(alphanum or date), formats (for dates)
         **/
-        // function multipleSortCol(array, data) {
-        //     var cols = [];
-        //     var orders = [];
-        //     var types = [];
-        //     var formats = [];
-        //     for (i = 0; i < data.length; i++) {
-        //         cols.push(data[i][0]);
-        //         orders.push(data[i][1]);
-        //         types.push(data[i][2]);
-        //         formats.push(data[i][3]);
-        //     }
-        //     array.sort(function (a, b) {
-        //         for (i = 0; i < cols.length; i++) {
-        //             // initialize variables
-        //             var first = "",
-        //                 second = "";
-        //             var order = orders[i];
-        //             // get inner text from stringified elements
-        //             let firstCol = new DOMParser().parseFromString(
-        //                 a[cols[i]],
-        //                 "text/html"
-        //             ).documentElement.textContent;
-        //             let secondCol = new DOMParser().parseFromString(
-        //                 b[cols[i]],
-        //                 "text/html"
-        //             ).documentElement.textContent;
-        //             // If it's last col selected and a = b return 0
-        //             if (i == cols.length && firstCol == secondCol) {
-        //                 return 0;
-        //             }
-        //             // check col type if is aplhpanum or date
-        //             if (types[i] == "alphanumeric") {
-        //                 if (firstCol > secondCol) {
-        //                     return order;
-        //                 } else if (firstCol < secondCol) {
-        //                     return -1 * order;
-        //                 }
-        //             } else if (types[i] == "date") {
-        //                 if (
-        //                     formatDate(formats[i], firstCol) >
-        //                     formatDate(formats[i], secondCol)
-        //                 ) {
-        //                     return order;
-        //                 } else if (
-        //                     formatDate(formats[i], firstCol) <
-        //                     formatDate(formats[i], secondCol)
-        //                 ) {
-        //                     return -1 * order;
-        //                 }
-        //             }
-        //         }
-        //     });
-        // }
+        function multipleSortCol(array, data) {
+            var cols = [];
+            var orders = [];
+            var types = [];
+            var formats = [];
+            for (i = 0; i < data.length; i++) {
+                cols.push(data[i][0]);
+                orders.push(data[i][1]);
+                types.push(data[i][2]);
+                formats.push(data[i][3]);
+            }
+            array.sort(function (a, b) {
+                for (i = 0; i < cols.length; i++) {
+                    // initialize variables
+                    var first = "",
+                        second = "";
+                    var order = orders[i];
+                    // get inner text from stringified elements
+                    let firstCol = new DOMParser().parseFromString(
+                        a[cols[i]],
+                        "text/html"
+                    ).documentElement.textContent;
+                    let secondCol = new DOMParser().parseFromString(
+                        b[cols[i]],
+                        "text/html"
+                    ).documentElement.textContent;
+                    // If it's last col selected and a = b return 0
+                    if (i == cols.length && firstCol == secondCol) {
+                        return 0;
+                    }
+                    // check col type if is aplhpanum or date
+                    if (types[i] == "alphanumeric") {
+                        if (firstCol > secondCol) {
+                            return order;
+                        } else if (firstCol < secondCol) {
+                            return -1 * order;
+                        }
+                    } else if (types[i] == "date") {
+                        if (
+                            formatDate(formats[i], firstCol) >
+                            formatDate(formats[i], secondCol)
+                        ) {
+                            return order;
+                        } else if (
+                            formatDate(formats[i], firstCol) <
+                            formatDate(formats[i], secondCol)
+                        ) {
+                            return -1 * order;
+                        }
+                    }
+                }
+            });
+        }
 
         /**
         Append sorted table
@@ -737,4 +737,4 @@
             }
         }
     };
-});
+})(jQuery);
