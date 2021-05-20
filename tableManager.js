@@ -256,12 +256,12 @@
                 Table.hasClass("tableFilterBy")
             ) {
                 // Create div and select to filter
-                var filterbyDiv =
-                    '<div id="for_filter_by" class="for_filter_by" style="display: inline;">' +
-                    '<input id="filter_input" type="text" placeholder="'+translate(voc_type_here_filter) +'">' +
-                    '<label for="filter_by">'+translate(voc_filter_by)+': </label>'+
-                    '<select id="filter_by"></select> </div>';
-                $(this).before(filterbyDiv);
+                // var filterbyDiv =
+                //     '<div id="for_filter_by" class="for_filter_by" style="display: inline;">' +
+                //     '<input id="filter_input" type="text" placeholder="'+translate(voc_type_here_filter) +'">' +
+                //     '<label for="filter_by">'+translate(voc_filter_by)+': </label>'+
+                //     '<select id="filter_by"></select> </div>';
+                // $(this).before(filterbyDiv);
 
                 // Populate select with every th text and as value use column number
                 $(Heads).each(function (i) {
