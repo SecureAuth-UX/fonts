@@ -169,7 +169,7 @@
                     translate(voc_show_rows) +
                     ': </label><select id="numrows"></select></div>';
                 // append div to choose num rows to show
-                Table.after(numrowsDiv);
+                (".paginate").append(numrowsDiv);
                 // get show rows options and append select to its div
                 for (i = 0; i < showrows.length; i++) {
                     $("select#numrows").append(
@@ -209,7 +209,7 @@
                 // append num pages on bottom
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
-                Table.after(pagesDiv);
+                numrowsDiv.after(pagesDiv);
 
                 // Showrows option and append
                 // If showrows is set get select val
@@ -345,9 +345,6 @@
                 }
                 TableSort(firstSortRules);
             }
-
-            $(".paginate").html(numrowsDiv, pagesDiv);
-            $(".paginate").html(numrowsDiv + pagesDiv);
         }
         if (debug) {
             cLog("Options set:", options);
