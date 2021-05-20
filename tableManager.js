@@ -618,13 +618,25 @@
             // reset div
             $("#pagesControllers").html("");
             // First
-            $("#pagesControllers").append(
-                $("<button>", {
-                    value: "first",
-                    text: "<<",
-                    class: "pagecontroller pagecontroller-f",
-                })
-            );
+            // $("#pagesControllers").append(
+            //     $("<button>", {
+            //         value: "first",
+            //         text: "<<",
+            //         class: "pagecontroller pagecontroller-f",
+            //     })
+            // );
+
+            // Numbers
+            for (i = 1; i <= nPages; i++) {
+                $("#pagesControllers").append(
+                    $("<button>", {
+                        value: i,
+                        text: i + "of" + nPages,
+                        class: "pagecontroller pagecontroller-num",
+                    })
+                );
+            }
+
             // Previous
             $("#pagesControllers").append(
                 $("<button>", {
@@ -633,16 +645,7 @@
                     class: "pagecontroller pagecontroller-p",
                 })
             );
-            // Numbers
-            for (i = 1; i <= nPages; i++) {
-                $("#pagesControllers").append(
-                    $("<button>", {
-                        value: i,
-                        text: i,
-                        class: "pagecontroller pagecontroller-num",
-                    })
-                );
-            }
+            
             // Next
             $("#pagesControllers").append(
                 $("<button>", {
@@ -652,13 +655,13 @@
                 })
             );
             // Last
-            $("#pagesControllers").append(
-                $("<button>", {
-                    value: "last",
-                    text: ">>",
-                    class: "pagecontroller pagecontroller-l",
-                })
-            );
+            // $("#pagesControllers").append(
+            //     $("<button>", {
+            //         value: "last",
+            //         text: ">>",
+            //         class: "pagecontroller pagecontroller-l",
+            //     })
+            // );
         }
 
         /**
