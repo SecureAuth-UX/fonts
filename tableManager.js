@@ -627,12 +627,12 @@
             // );
 
             // Numbers
-            var pages = $(".pagecontroller-num").length;
+
             for (i = 1; i <= nPages; i++) {
                 $("#pagesControllers").append(
                     $("<button>", {
                         value: i,
-                        text: i + "of" + pages + "pages",
+                        text: "pagecontroller currentPage" + "of" + $(".pagecontroller-num").length + "pages",
                         class: "pagecontroller pagecontroller-num",
                     })
                 );
