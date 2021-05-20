@@ -343,7 +343,7 @@
                     firstSortColumn.push(options.firstSort[i][0]);
                     firstSortOrder.push(options.firstSort[i][1]);
                 }
-                TableSort(firstSortRules);
+                // TableSort(firstSortRules);
             }
         }
         if (debug) {
