@@ -251,53 +251,53 @@
             /**
             Append filter option
             **/
-            if (
-                options.appendFilterby === true ||
-                Table.hasClass("tableFilterBy")
-            ) {
-                // Create div and select to filter
-                // var filterbyDiv =
-                //     '<div id="for_filter_by" class="for_filter_by" style="display: inline;">' +
-                //     '<input id="filter_input" type="text" placeholder="'+translate(voc_type_here_filter) +'">' +
-                //     '<label for="filter_by">'+translate(voc_filter_by)+': </label>'+
-                //     '<select id="filter_by"></select> </div>';
-                // $(this).before(filterbyDiv);
+            // if (
+            //     options.appendFilterby === true ||
+            //     Table.hasClass("tableFilterBy")
+            // ) {
+            //     // Create div and select to filter
+            //     // var filterbyDiv =
+            //     //     '<div id="for_filter_by" class="for_filter_by" style="display: inline;">' +
+            //     //     '<input id="filter_input" type="text" placeholder="'+translate(voc_type_here_filter) +'">' +
+            //     //     '<label for="filter_by">'+translate(voc_filter_by)+': </label>'+
+            //     //     '<select id="filter_by"></select> </div>';
+            //     // $(this).before(filterbyDiv);
 
-                // Populate select with every th text and as value use column number
-                $(Heads).each(function (i) {
-                    if (!$(this).hasClass("disableFilterBy")) {
-                        $("div#filter_by").append(
-                            $("<div>", {
-                                value: i,
-                                text: $(this).text(),
-                            })
-                        );
-                    }
-                });
+            //     // Populate select with every th text and as value use column number
+            //     $(Heads).each(function (i) {
+            //         if (!$(this).hasClass("disableFilterBy")) {
+            //             $("div#filter_by").append(
+            //                 $("<div>", {
+            //                     value: i,
+            //                     text: $(this).text(),
+            //                 })
+            //             );
+            //         }
+            //     });
 
-                // Filter on typing selecting column by select #filter_by
-                $("input#filter_input").on("keyup", function () {
-                    var val = $.trim($(this).val())
-                        .replace(/ +/g, " ")
-                        .toLowerCase();
-                    var select_by = $("div#filter_by").val();
+            //     // Filter on typing selecting column by select #filter_by
+            //     $("input#filter_input").on("keyup", function () {
+            //         var val = $.trim($(this).val())
+            //             .replace(/ +/g, " ")
+            //             .toLowerCase();
+            //         var select_by = $("div#filter_by").val();
 
-                    Table.find(".tbody .tr")
-                        .show()
-                        .filter(function () {
-                            // search into column selected by #filter_by
-                            var text = $(this)
-                                .find(".td:eq(" + select_by + ")")
-                                .text()
-                                .replace(/\s+/g, " ")
-                                .toLowerCase();
-                            return !~text.indexOf(val);
-                        })
-                        .hide();
+            //         Table.find(".tbody .tr")
+            //             .show()
+            //             .filter(function () {
+            //                 // search into column selected by #filter_by
+            //                 var text = $(this)
+            //                     .find(".td:eq(" + select_by + ")")
+            //                     .text()
+            //                     .replace(/\s+/g, " ")
+            //                     .toLowerCase();
+            //                 return !~text.indexOf(val);
+            //             })
+            //             .hide();
                         
-                    if(val == '') paginate();
-                });
-            }
+            //         if(val == '') paginate();
+            //     });
+            // }
 
             /**
             Date format option
