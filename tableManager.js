@@ -266,8 +266,8 @@
                 // Populate select with every th text and as value use column number
                 $(Heads).each(function (i) {
                     if (!$(this).hasClass("disableFilterBy")) {
-                        $("select#filter_by").append(
-                            $("<option>", {
+                        $("div#filter_by").append(
+                            $("<div>", {
                                 value: i,
                                 text: $(this).text(),
                             })
