@@ -204,13 +204,11 @@
             Pagination
             **/
             if (pagination === true || Table.hasClass("tablePagination")) {
-                let numrowsDiv;
                 var numPages = Math.ceil(rows.length / numPerPage);
 
                 // append num pages on bottom
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
-                numrowsDiv.after(pagesDiv);
                 $(".paginate").append(pagesDiv);
 
                 // Showrows option and append
