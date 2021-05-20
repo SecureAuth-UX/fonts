@@ -627,16 +627,18 @@
             // );
 
             // Numbers
-
             for (i = 1; i <= nPages; i++) {
                 $("#pagesControllers").append(
                     $("<button>", {
                         value: i,
-                        text: "pagecontroller currentPage" + "of" + $(".pagecontroller-num").length + "pages",
+                        text: i,
                         class: "pagecontroller pagecontroller-num",
                     })
                 );
             }
+
+            var cantidad = $("#pagesControllers .pagecontroller-num").length;
+            $("#pagesControllers").append("<span>" + cantidad + "</span>");
 
             // Previous
             $("#pagesControllers").append(
