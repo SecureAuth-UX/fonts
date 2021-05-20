@@ -266,9 +266,10 @@
                 // Populate select with every th text and as value use column number
                 $(Heads).each(function (i) {
                     if (!$(this).hasClass("disableFilterBy")) {
-                        $("div#filter_by").append(
-                            $("<div>", {
+                        $("ul#filter_by").append(
+                            $("<li>", {
                                 value: i,
+                                class: "sa-form-select-custom-option",
                                 text: $(this).text(),
                             })
                         );
@@ -280,7 +281,7 @@
                     var val = $.trim($(this).val())
                         .replace(/ +/g, " ")
                         .toLowerCase();
-                    var select_by = $("div#filter_by").val();
+                    var select_by = $("ul#filter_by").val();
 
                     Table.find(".tbody .tr")
                         .show()
