@@ -627,8 +627,8 @@
             // );
 
             // Numbers
+            var pages = $(".pagecontroller-num").length;
             for (i = 1; i <= nPages; i++) {
-                var pages = $(".pagesControllers").length;
                 $("#pagesControllers").append(
                     $("<button>", {
                         value: i,
