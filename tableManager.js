@@ -268,6 +268,7 @@
                         $("ul#filter_by").append(
                             $("<li>", {
                                 value: i,
+                                class: "sa-form-select-custom-option",
                                 text: $(this).text(),
                             })
                         );
@@ -279,7 +280,7 @@
                     var val = $.trim($(this).val())
                         .replace(/ +/g, " ")
                         .toLowerCase();
-                    var select_by = $("ul#filter_by").val();
+                    var select_by = $(".store-default").val();
 
                     Table.find(".tbody .tr")
                         .show()
