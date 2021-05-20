@@ -638,7 +638,8 @@
             }
 
             var cantidad = $("#pagesControllers .pagecontroller-num").length;
-            $("#pagesControllers").append("<span>" + cantidad + "</span>");
+            var current = $("#pagesControllers .pagecontroller-num.currentPage").val();
+            $("#pagesControllers").append("<span>" + current + " of " + cantidad + "</span>");
 
             // Previous
             $("#pagesControllers").append(
