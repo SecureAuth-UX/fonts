@@ -219,7 +219,7 @@
 
                 generatePaginationValues();
             }
-            $(".paginate").html(numrowsDiv, pagesDiv);
+            
             /**
             Check if disable filter by is empty or undefined
             **/
@@ -345,6 +345,9 @@
                 }
                 TableSort(firstSortRules);
             }
+
+            $(".paginate").html(numrowsDiv, pagesDiv);
+            $(".paginate").html(numrowsDiv + pagesDiv);
         }
         if (debug) {
             cLog("Options set:", options);
