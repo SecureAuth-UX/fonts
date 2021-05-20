@@ -280,7 +280,7 @@
                     var val = $.trim($(this).val())
                         .replace(/ +/g, " ")
                         .toLowerCase();
-                    var select_by = $(".store-default").val();
+                    var select_by = $(".store-default").attr('value');
 
                     Table.find(".tbody .tr")
                         .show()
