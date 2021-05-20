@@ -210,7 +210,7 @@
                 var pagesDiv =
                     '<div id="pagesControllers" class="pagesControllers"></div>';
                 Table.after(pagesDiv);
-
+                $(".paginate").append(numrowsDiv, pagesDiv);
                 // Showrows option and append
                 // If showrows is set get select val
                 if (showrows_option !== true) {
