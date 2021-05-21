@@ -281,10 +281,22 @@
                 });
 
                 // Filter on typing selecting column by select #filter_by
+                // $("#myInput").on("keyup", function () {
+                //     var value = $(this).val().toLowerCase();
+                //     $(".table .table-content .table-row").filter(function () {
+                //         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                //     });
+                // });
+
                 $("input#filter_input").on("keyup", function () {
                     var val = $.trim($(this).val())
                         .replace(/ +/g, " ")
                         .toLowerCase();
+                    if($$(".store-default").attr('value') == "All") {
+                        alert("hola");
+                    };
+
+
                     var select_by = $(".store-default").attr('value');
 
                     Table.find(".tbody .tr")
