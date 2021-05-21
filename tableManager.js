@@ -282,7 +282,17 @@
                         .toLowerCase();
                     var select_by = $(".store-default").attr('value');
                     if($(".store-default").attr('value') == "All") {
-                        alert("hola");
+                        Table.find(".tbody .tr")
+                        .show()
+                        .filter(function () {
+                            var text = $(this)
+                                .find(".td")
+                                .text()
+                                .replace(/\s+/g, " ")
+                                .toLowerCase();
+                            return !~text.indexOf(val);
+                        })
+                        .hide();
                     }
                     else {
                     Table.find(".tbody .tr")
