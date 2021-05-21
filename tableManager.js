@@ -267,11 +267,6 @@
                     if (!$(this).hasClass("disableFilterBy")) {
                         $("ul#filter_by").append(
                             $("<li>", {
-                                value: "All",
-                                class: "sa-form-select-custom-option",
-                                text: $(this).text(),
-                            }),
-                            $("<li>", {
                                 value: i,
                                 class: "sa-form-select-custom-option",
                                 text: $(this).text(),
