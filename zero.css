@@ -1,3 +1,7 @@
 #texteditor-container li {
   font-size: 10px;
 }
+
+iframe {
+ padding: 20px;
+}
