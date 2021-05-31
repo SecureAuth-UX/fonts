@@ -1,7 +1,11 @@
 #texteditor-container li {
-  font-size: 10px;
+font-size: 10px;
 }
 
 body {
- padding: 20px;
+padding: 20px;
+}
+
+.mxwg212 {
+max-width: 1200px !important;
 }
